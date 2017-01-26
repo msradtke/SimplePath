@@ -1,0 +1,22 @@
+﻿<Application x:Class="SimplePath.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:SimplePath"
+             xmlns:Views="clr-namespace:SimplePath.Views"
+             xmlns:ViewModels="clr-namespace:SimplePath.ViewModels"
+             StartupUri="Views/MainContainer.xaml">
+    <Application.Resources>
+
+        <DataTemplate DataType="{x:Type ViewModels:LinePathSetupViewModel}">
+            <Views:LinePathSetupView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type ViewModels:OutputViewModel}">
+            <Views:OutputView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type ViewModels:PathsViewModel}">
+                <Views:PathsView/>            
+        </DataTemplate>
+
+
+    </Application.Resources>
+</Application>

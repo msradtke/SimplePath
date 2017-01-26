@@ -1,0 +1,47 @@
+﻿<UserControl x:Class="SimplePath.Views.LinePathSetupView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SimplePath.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <StackPanel Orientation="Horizontal">
+                <Label Width="75">Start</Label>
+                <Label>x:</Label>
+                <TextBox Width="50"></TextBox>
+                <Label>y:</Label>
+                <TextBox Width="50"></TextBox>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="1">
+            <StackPanel Orientation="Horizontal">
+                <Label Width="75">End</Label>
+                <Label>x:</Label>
+                <TextBox Width="50"></TextBox>
+                <Label>y:</Label>
+                <TextBox Width="50"></TextBox>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="2">
+            <StackPanel Orientation="Horizontal">
+                <Label Width="75">Depth:</Label>
+                <TextBox Width="50"></TextBox>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="3">
+            <StackPanel Orientation="Horizontal">
+                <Label Width="75">CutMethod:</Label>
+                <ComboBox Width="100" ItemsSource="{Binding CutMethods}"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</UserControl>
