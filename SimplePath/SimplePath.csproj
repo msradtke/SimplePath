@@ -65,6 +65,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ActionCommand.cs" />
+    <Compile Include="Models\Generator.cs" />
     <Compile Include="Models\LinePath.cs" />
     <Compile Include="Models\Machine.cs" />
     <Compile Include="ViewModels\Events.cs" />

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using PropertyChanged;
+using Prism.Events;
 namespace SimplePath.ViewModels
 {
     [ImplementPropertyChanged]
@@ -11,9 +12,10 @@ namespace SimplePath.ViewModels
     {
         public MainContainerViewModel()
         {
-            LinePathSetupViewModel = new LinePathSetupViewModel();
-            OutputViewModel = new OutputViewModel();
-            PathsViewModel = new PathsViewModel();
+            var eventAggregator = new EventAggregator();
+            LinePathSetupViewModel = new LinePathSetupViewModel(eventAggregator);
+            OutputViewModel = new OutputViewModel(eventAggregator);
+            PathsViewModel = new PathsViewModel(eventAggregator);
         }
         public object LinePathSetupViewModel { get; set; }
         public object OutputViewModel { get; set; }

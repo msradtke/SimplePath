@@ -8,4 +8,5 @@ using SimplePath.Models;
 namespace SimplePath.ViewModels
 {
     public class LineAddedEvent : PubSubEvent<LinePath> { }
+    public class OutputSetEvent : PubSubEvent<string> { }
 }

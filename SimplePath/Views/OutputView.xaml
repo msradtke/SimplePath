@@ -12,6 +12,6 @@
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
         <Label>Output:</Label>
-        <TextBox Grid.Row="1" AcceptsReturn="True" TextWrapping="Wrap"></TextBox>
+        <TextBox Grid.Row="1" AcceptsReturn="True" TextWrapping="Wrap" Text="{Binding Output, UpdateSourceTrigger=PropertyChanged}"></TextBox>
     </Grid>
 </UserControl>

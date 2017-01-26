@@ -12,6 +12,7 @@
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
         <Label>Paths:</Label>
-        <ListBox Height="100"></ListBox>
+        <ListBox Height="100" DisplayMemberPath="Name" ItemsSource="{Binding LinePaths,UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding SelectedLinePath,UpdateSourceTrigger=PropertyChanged}"></ListBox>
+        <Button HorizontalAlignment="Right" VerticalAlignment="Bottom" Grid.Row="1" Command="{Binding GenerateCommand}">Generate</Button>
     </Grid>
 </UserControl>

@@ -12,36 +12,75 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
             <StackPanel Orientation="Horizontal">
-                <Label Width="75">Start</Label>
-                <Label>x:</Label>
-                <TextBox Width="50"></TextBox>
-                <Label>y:</Label>
-                <TextBox Width="50"></TextBox>
+                <Label Width="50">Name</Label>
+                <TextBox Width="100" Text="{Binding ActiveLinePath.Name,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"></TextBox>
             </StackPanel>
         </Grid>
         <Grid Grid.Row="1">
             <StackPanel Orientation="Horizontal">
-                <Label Width="75">End</Label>
-                <Label>x:</Label>
-                <TextBox Width="50"></TextBox>
-                <Label>y:</Label>
-                <TextBox Width="50"></TextBox>
+                <Label Width="75">Clearance:</Label>
+                <TextBox Width="50" Text="{Binding ClearanceHeight,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"></TextBox>
             </StackPanel>
         </Grid>
         <Grid Grid.Row="2">
             <StackPanel Orientation="Horizontal">
-                <Label Width="75">Depth:</Label>
-                <TextBox Width="50"></TextBox>
+                <Label Width="75">Start</Label>
+                <Label>x:</Label>
+                <TextBox Width="50" Text="{Binding ActiveLinePath.StartX,UpdateSourceTrigger=LostFocus,Mode=TwoWay}"></TextBox>
+                <Label>y:</Label>
+                <TextBox Width="50" Text="{Binding ActiveLinePath.StartY,UpdateSourceTrigger=LostFocus,Mode=TwoWay}"></TextBox>
             </StackPanel>
         </Grid>
         <Grid Grid.Row="3">
             <StackPanel Orientation="Horizontal">
-                <Label Width="75">CutMethod:</Label>
-                <ComboBox Width="100" ItemsSource="{Binding CutMethods}"/>
+                <Label Width="75">End</Label>
+                <Label>x:</Label>
+                <TextBox Width="50" Text="{Binding ActiveLinePath.EndX,UpdateSourceTrigger=LostFocus,Mode=TwoWay}"></TextBox>
+                <Label>y:</Label>
+                <TextBox Width="50" Text="{Binding ActiveLinePath.EndY,UpdateSourceTrigger=LostFocus,Mode=TwoWay}"></TextBox>
             </StackPanel>
+        </Grid>
+        <Grid Grid.Row="4">
+            <StackPanel Orientation="Horizontal">
+                <Label Width="75">Z</Label>
+                <Label>Start:</Label>
+                <TextBox Width="50" Text="{Binding ActiveLinePath.StartZ,UpdateSourceTrigger=LostFocus,Mode=TwoWay}"></TextBox>
+                <Label>End:</Label>
+                <TextBox Width="50" Text="{Binding ActiveLinePath.EndZ,UpdateSourceTrigger=LostFocus,Mode=TwoWay}"></TextBox>
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Row="5">
+            <StackPanel Orientation="Horizontal">
+                <Label Width="75">Depth of cut:</Label>
+                <TextBox Width="50" Text="{Binding ActiveLinePath.DepthOfCut,UpdateSourceTrigger=LostFocus,Mode=TwoWay}"></TextBox>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="6">
+            <StackPanel Orientation="Horizontal">
+                <Label Width="75">CutMethod:</Label>
+                <ComboBox Width="100" ItemsSource="{Binding CutMethodTypeValues}" SelectedItem="{Binding ActiveLinePath.CutMethod,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"/>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="7">
+            <StackPanel Orientation="Horizontal">
+                <Label Width="75">Finish</Label>
+                <Label>x:</Label>
+                <TextBox Width="50" Text="{Binding FinishX,UpdateSourceTrigger=LostFocus,Mode=TwoWay}"></TextBox>
+                <Label>y:</Label>
+                <TextBox Width="50" Text="{Binding FinishY,UpdateSourceTrigger=LostFocus,Mode=TwoWay}"></TextBox>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="8">
+            <Button HorizontalAlignment="Right" Command="{Binding AddLineCommand}">Add Line</Button>
         </Grid>
     </Grid>
 </UserControl>
